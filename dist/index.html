@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <div id=smartInit></div>
+    <div id=getSnapshot></div>
+    <div id=brg></div>
+<script type=text/javascript src=smartSDK.js></script></body>
+<script>
+    JDSMART.ready(function(){
+       document.getElementById('getSnapshot').innerHTML = "进入ready";
+       JDSMART.io.getSnapshot(function(res) {
+            document.getElementById('getSnapshot').innerHTML = JSON.stringify(res);   
+        }, function(err) {
+            document.getElementById('getSnapshot').innerHTML = JSON.stringify(err);   
+        })
+    });
+</script>
+</html>
